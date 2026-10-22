@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>本日（2026年10月22日）発売のマンガ単行本一覧 - コミックナタリー</title>
+    <style>
+        :root {
+            --natalie-red: #e60012;
+            --natalie-dark-red: #be000f;
+            --bg-gray: #f4f5f7;
+            --border-color: #e2e8f0;
+            --text-main: #2d3748;
+            --text-muted: #718096;
+            --link-blue: #0066cc;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-gray);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding-bottom: 100px;
+        }
+
+        /* 1. ナタリー風ヘッダー */
+        .site-header {
+            background-color: #222;
+            color: #fff;
+            border-bottom: 3px solid var(--natalie-red);
+        }
+
+        .header-top {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 10px 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: white;
+        }
+
+        .logo-badge {
+            background-color: var(--natalie-red);
+            color: white;
+            font-weight: 900;
+            font-size: 1.4rem;
+            padding: 2px 10px;
+            letter-spacing: 1px;
+            border-radius: 2px;
+        }
+
+        .logo-text {
+            font-size: 1.2rem;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+        }
+
+        .header-date {
+            font-size: 0.85rem;
+            color: #aaa;
+        }
+
+        /* 速報テロップ */
+        .ticker-bar {
+            background-color: #111;
+            color: #ffeb3b;
+            font-size: 0.85rem;
+            padding: 6px 16px;
+            overflow: hidden;
+            white-space: nowrap;
+            border-top: 1px solid #333;
+        }
+
+        .ticker-content {
+            display: inline-block;
+            animation: ticker 25s linear infinite;
+        }
+
+        @keyframes ticker {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        /* パンくずリスト */
+        .breadcrumb {
+            max-width: 1100px;
+            margin: 12px auto 0;
+            padding: 0 16px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .breadcrumb a {
+            color: var(--link-blue);
+            text-decoration: none;
+        }
+
+        /* メインコンテンツエリア */
+        .container {
+            max-width: 1100px;
+            margin: 16px auto;
+            padding: 0 16px;
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 24px;
+        }
+
+        @media (max-width: 850px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .main-card {
+            background: white;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+            padding: 24px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .article-title {
+            font-size: 1.6rem;
+            font-weight: bold;
+            line-height: 1.4;
+            border-bottom: 2px solid var(--natalie-red);
+            padding-bottom: 12px;
+            margin-bottom: 16px;
+            color: #111;
+        }
+
+        .article-meta {
+            display: flex;
+            gap: 16px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+
+        /* 目次ボックス */
+        .toc-box {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-left: 4px solid var(--natalie-red);
+            padding: 16px;
+            border-radius: 4px;
+            margin-bottom: 24px;
+        }
+
+        .toc-title {
+            font-weight: bold;
+            font-size: 0.95rem;
+            margin-bottom: 8px;
+            color: #2d3748;
+        }
+
+        .toc-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px 16px;
+            list-style: none;
+            font-size: 0.85rem;
+        }
+
+        .toc-list a {
+            color: var(--link-blue);
+            text-decoration: none;
+        }
+
+        .toc-list a:hover {
+            text-decoration: underline;
+        }
+
+        /* 検索・フィルターコントロール */
+        .controls-card {
+            background: #edf2f7;
+            padding: 12px 16px;
+            border-radius: 6px;
+            margin-bottom: 24px;
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .search-input {
+            flex: 1;
+            min-width: 200px;
+            padding: 8px 12px;
+            border: 1px solid #cbd5e0;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+
+        /* 出版社セクション */
+        .publisher-section {
+            margin-bottom: 32px;
+            scroll-margin-top: 20px;
+        }
+
+        .publisher-header {
+            background: #2b6cb0;
+            color: white;
+            padding: 8px 14px;
+            font-size: 1.05rem;
+            font-weight: bold;
+            border-radius: 4px;
+            margin-bottom: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .publisher-count {
+            font-size: 0.8rem;
+            background: rgba(255,255,255,0.2);
+            padding: 2px 8px;
+            border-radius: 12px;
+        }
+
+        /* リストアイテム */
+        .manga-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .manga-item {
+            background: white;
+            border: 1px solid #e2e8f0;
+            padding: 12px 16px;
+            border-radius: 4px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            transition: background-color 0.15s ease;
+        }
+
+        .manga-item:hover {
+            background-color: #f7fafc;
+        }
+
+        .manga-info {
+            flex: 1;
+        }
+
+        /* 題名直接リンク */
+        .manga-title {
+            font-size: 1.05rem;
+            font-weight: bold;
+            color: var(--link-blue);
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 4px;
+        }
+
+        .manga-title:hover {
+            text-decoration: underline;
+            color: var(--natalie-red);
+        }
+
+        .manga-author {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .manga-meta-tags {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            margin-top: 4px;
+        }
+
+        .label-badge {
+            font-size: 0.75rem;
+            background: #e2e8f0;
+            color: #4a5568;
+            padding: 1px 6px;
+            border-radius: 3px;
+        }
+
+        .price-badge {
+            font-size: 0.8rem;
+            color: #e53e3e;
+            font-weight: bold;
+        }
+
+        /* アクションボタン群 */
+        .action-group {
+            display: flex;
+            gap: 6px;
+            align-items: center;
+        }
+
+        .btn-link {
+            padding: 6px 10px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            border-radius: 3px;
+            text-decoration: none;
+            color: white;
+            transition: opacity 0.2s;
+        }
+
+        .btn-link:hover {
+            opacity: 0.85;
+        }
+
+        .btn-amazon { background-color: #ff9900; }
+        .btn-rakuten { background-color: #bf0000; }
+        .btn-search { background-color: #4285f4; }
+
+        .btn-check {
+            padding: 6px 12px;
+            font-size: 0.8rem;
+            border: 1px solid #cbd5e0;
+            background: #fff;
+            color: #4a5568;
+            border-radius: 3px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.2s;
+        }
+
+        .btn-check.active {
+            background-color: var(--natalie-red);
+            color: white;
+            border-color: var(--natalie-dark-red);
+        }
+
+        /* サイドバー */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .side-box {
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 16px;
+        }
+
+        .side-title {
+            font-weight: bold;
+            font-size: 0.95rem;
+            border-bottom: 2px solid var(--natalie-red);
+            padding-bottom: 6px;
+            margin-bottom: 12px;
+        }
+
+        .stat-item {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            padding: 6px 0;
+            border-bottom: 1px dashed #edf2f7;
+        }
+
+        /* 固定下部チェックリストバー */
+        .bottom-cart-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(17, 24, 39, 0.95);
+            backdrop-filter: blur(8px);
+            color: white;
+            padding: 12px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 -4px 12px rgba(0,0,0,0.15);
+            z-index: 1000;
+        }
+
+        .cart-info {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .cart-count {
+            background: var(--natalie-red);
+            color: white;
+            font-weight: bold;
+            padding: 2px 10px;
+            border-radius: 12px;
+            font-size: 0.9rem;
+        }
+
+        .cart-total {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #4ade80;
+        }
+
+        .btn-copy {
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 0.85rem;
+        }
+
+        .btn-copy:hover {
+            background: #1d4ed8;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ヘッダー -->
+    <header class="site-header">
+        <div class="header-top">
+            <a href="#" class="logo-container">
+                <span class="logo-badge">コミック</span>
+                <span class="logo-text">ナタリー</span>
+            </a>
+            <div class="header-date">2026年10月22日（木）更新</div>
+        </div>
+        <div class="ticker-bar">
+            <div class="ticker-content">
+                【新刊情報】2026年10月22日発売のコミック単行本一覧を発行元別にまとめました（全10社・54作品） ── タイトルクリックでAmazon購入ページへ直接移動できます。
+            </div>
+        </div>
+    </header>
+
+    <div class="breadcrumb">
+        <a href="#">コミックナタリー</a> &gt; <a href="#">ニュース</a> &gt; 本日発売のマンガ単行本一覧
+    </div>
+
+    <!-- メインコンテンツ -->
+    <div class="container">
+        <main class="main-card">
+            <h1 class="article-title">本日発売のマンガ単行本リスト（2026年10月22日）</h1>
+            
+            <div class="article-meta">
+                <span>2026年10月22日 00:00</span>
+                <span>全54作品掲載</span>
+            </div>
+
+            <!-- 目次 -->
+            <div class="toc-box">
+                <div class="toc-title">■ 出版社別目次（タップでジャンプ）</div>
+                <ul class="toc-list" id="toc-container">
+                    <!-- JSで動的生成 -->
+                </ul>
+            </div>
+
+            <!-- 検索フィルター -->
+            <div class="controls-card">
+                <input type="text" id="search-input" class="search-input" placeholder="作品名・作者名でリアルタイム検索...">
+            </div>
+
+            <!-- リスト表示エリア -->
+            <div id="publishers-container">
+                <!-- JSで動的生成 -->
+            </div>
+        </main>
+
+        <!-- サイドバー -->
+        <aside class="sidebar">
+            <div class="side-box">
+                <div class="side-title">本日発売の概要</div>
+                <div class="stat-item">
+                    <span>対象日</span>
+                    <strong>2026/10/22</strong>
+                </div>
+                <div class="stat-item">
+                    <span>掲載出版社</span>
+                    <strong>10社</strong>
+                </div>
+                <div class="stat-item">
+                    <span>総新刊タイトル数</span>
+                    <strong>54作品</strong>
+                </div>
+            </div>
+
+            <div class="side-box">
+                <div class="side-title">便利な使い方</div>
+                <p style="font-size:0.8rem; color:#4a5568;">
+                    ・<strong>作品名をクリック</strong>：Amazonの購入ページへ移動します。<br>
+                    ・<strong>「＋ 買う」ボタン</strong>：チェックした作品の合計金額を下部に表示＆リストのコピーが可能です。
+                </p>
+            </div>
+        </aside>
+    </div>
+
+    <!-- 下部固定メモバー -->
+    <div class="bottom-cart-bar">
+        <div class="cart-info">
+            <span>買う予定の作品: <span id="cart-count" class="cart-count">0</span> 件</span>
+            <span>合計予想額: <span id="cart-total" class="cart-total">￥0</span></span>
+        </div>
+        <button class="btn-copy" onclick="copyCartList()">買出しメモをコピー</button>
+    </div>
+
+    <script>
+        // 本日の全新刊データ（10社・54作品）
+        const mangaData = [
+            {
+                publisher: "一迅社",
+                items: [
+                    { title: "カワイイ恋は着飾らない (4)", author: "千雲りよ", price: 814, label: "ZERO-SUMコミックス", isbn: "9784758039800" },
+                    { title: "神様の依り代様 (2)", author: "浅野あや", price: 792, label: "ZERO-SUMコミックス", isbn: "9784758039817" }
+                ]
+            },
+            {
+                publisher: "KADOKAWA",
+                items: [
+                    { title: "新・魔法科高校の劣等生 キグナスの乙女たち (7)", author: "佐島勤 / 桐原いづみ", price: 748, label: "電撃コミックスNEXT", isbn: "9784049159000" },
+                    { title: "Re:ゼロから始める異世界生活 第四章 (14)", author: "長月達平 / 花鶏ハルノ", price: 759, label: "MFコミックス", isbn: "9784046838000" },
+                    { title: "ガールズ＆パンツァー アバンティ！ヴォーパルハウンド (26)", author: "矢立肇 / 野上武志", price: 770, label: "MFコミックス", isbn: "9784046838017" }
+                ]
+            },
+            {
+                publisher: "講談社",
+                items: [
+                    { title: "君と宇宙を歩くために (7)", author: "泥ノ田犬彦", price: 759, label: "モーニングKC", isbn: "9784065452493" },
+                    { title: "天国大魔境 (14)", author: "石黒正数", price: 759, label: "アフタヌーンKC", isbn: "9784065452028" },
+                    { title: "天狗の台所 (8)", author: "田中相", price: 759, label: "アフタヌーンKC", isbn: "9784065451618" },
+                    { title: "クッキングパパ (179)", author: "うえやまとち", price: 759, label: "モーニングKC", isbn: "9784065452000" },
+                    { title: "二階堂地獄ゴルフ (15)", author: "福本伸行", price: 759, label: "モーニングKC", isbn: "9784065452010" }
+                ]
+            },
+            {
+                publisher: "三交社",
+                items: [
+                    { title: "ダブルフェイスに愛されたい", author: "佐倉リコ", price: 792, label: "ヴァンプコミックス", isbn: "9784879194000" }
+                ]
+            },
+            {
+                publisher: "秋水社",
+                items: [
+                    { title: "結婚、のち恋愛。 (5)", author: "宮園いづみ", price: 750, label: "DAITO COMICS", isbn: "9784864956000" },
+                    { title: "私のこと嫌いって言いましたよね!? (10)", author: "桜井真優", price: 750, label: "DAITO COMICS", isbn: "9784864956017" }
+                ]
+            },
+            {
+                publisher: "実業之日本社",
+                items: [
+                    { title: "特別じゃない日 時をむすぶ本", author: "稲空穂", price: 1100, label: "MBコミックス", isbn: "9784408640000" }
+                ]
+            },
+            {
+                publisher: "スクウェア・エニックス",
+                items: [
+                    { title: "配達先のお姉さんが怖すぎる (5)", author: "オノワニ", price: 730, label: "ガンガンコミックスPixiv", isbn: "9784757593000" },
+                    { title: "VTuber草村しげみ (3)", author: "佐々木マキ", price: 730, label: "ガンガンコミックスPixiv", isbn: "9784757593017" },
+                    { title: "男の子もメイド服でかわいくなっていいですか？ (1)", author: "毒川", price: 730, label: "ガンガンコミックス", isbn: "9784757593024" }
+                ]
+            },
+            {
+                publisher: "大都社",
+                items: [
+                    { title: "部長から義兄、そして恋人!? (6)", author: "橘ミゼル", price: 780, label: "Daito Comics", isbn: "9784864956500" },
+                    { title: "身代わり婚の処方箋 (2)", author: "高宮さとる", price: 780, label: "Daito Comics", isbn: "9784864956517" }
+                ]
+            },
+            {
+                publisher: "パイ インターナショナル",
+                items: [
+                    { title: "ノアの剥製（下）", author: "ベンジャミン", price: 1210, label: "PIE COMICS", isbn: "9784756258000" }
+                ]
+            },
+            {
+                publisher: "フロンティアワークス",
+                items: [
+                    { title: "百瀬あんデビュー10周年記念ファンブック", author: "百瀬あん", price: 1980, label: "daria comics", isbn: "9784866577000" },
+                    { title: "水辺の夜 (2)", author: "Clarjung", price: 1089, label: "daria comics", isbn: "9784866577017" }
+                ]
+            }
+        ];
+
+        // チェック状態保持用
+        const selectedItems = new Set();
+
+        // 初期化処理
+        document.addEventListener('DOMContentLoaded', () => {
+            renderTOC();
+            renderList();
+
+            // 検索リスナー
+            document.getElementById('search-input').addEventListener('input', (e) => {
+                renderList(e.target.value.trim().toLowerCase());
+            });
+        });
+
+        // 目次の描画
+        function renderTOC() {
+            const container = document.getElementById('toc-container');
+            container.innerHTML = mangaData.map(pub => `
+                <li><a href="#pub-${encodeURIComponent(pub.publisher)}">${pub.publisher} (${pub.items.length})</a></li>
+            `).join('');
+        }
+
+        // リストの描画
+        function renderList(filter = "") {
+            const container = document.getElementById('publishers-container');
+            container.innerHTML = "";
+
+            mangaData.forEach(pub => {
+                // 検索フィルタリング
+                const filteredItems = pub.items.filter(item => 
+                    item.title.toLowerCase().includes(filter) || 
+                    item.author.toLowerCase().includes(filter)
+                );
+
+                if (filteredItems.length === 0) return;
+
+                const section = document.createElement('div');
+                section.className = 'publisher-section';
+                section.id = `pub-${encodeURIComponent(pub.publisher)}`;
+
+                const header = document.createElement('div');
+                header.className = 'publisher-header';
+                header.innerHTML = `
+                    <span>${pub.publisher}</span>
+                    <span class="publisher-count">${filteredItems.length} 作品</span>
+                `;
+                section.appendChild(header);
+
+                const ul = document.createElement('ul');
+                ul.className = 'manga-list';
+
+                filteredItems.forEach(item => {
+                    const li = document.createElement('li');
+                    li.className = 'manga-item';
+
+                    // Amazon検索用URL
+                    const amazonUrl = `https://www.amazon.co.jp/s?k=${encodeURIComponent(item.title + " " + item.author)}`;
+                    // 楽天検索用URL
+                    const rakutenUrl = `https://search.rakuten.co.jp/search/mall/${encodeURIComponent(item.title)}/`;
+                    
+                    const isChecked = selectedItems.has(item.title);
+
+                    li.innerHTML = `
+                        <div class="manga-info">
+                            <a href="${amazonUrl}" target="_blank" rel="noopener" class="manga-title" title="Amazonで探す">
+                                ${item.title}
+                            </a>
+                            <div class="manga-author">著者: ${item.author}</div>
+                            <div class="manga-meta-tags">
+                                <span class="label-badge">${item.label}</span>
+                                <span class="price-badge">￥${item.price.toLocaleString()}</span>
+                            </div>
+                        </div>
+                        <div class="action-group">
+                            <a href="${amazonUrl}" target="_blank" rel="noopener" class="btn-link btn-amazon">Amazon</a>
+                            <a href="${rakutenUrl}" target="_blank" rel="noopener" class="btn-link btn-rakuten">楽天</a>
+                            <button class="btn-check ${isChecked ? 'active' : ''}" onclick="toggleCheck('${item.title}', ${item.price}, this)">
+                                ${isChecked ? '✓ チェック済' : '＋ 買う'}
+                            </button>
+                        </div>
+                    `;
+                    ul.appendChild(li);
+                });
+
+                section.appendChild(ul);
+                container.appendChild(section);
+            });
+        }
+
+        // チェックリストのトグル
+        function toggleCheck(title, price, btn) {
+            if (selectedItems.has(title)) {
+                selectedItems.delete(title);
+                btn.classList.remove('active');
+                btn.textContent = '＋ 買う';
+            } else {
+                selectedItems.add(title);
+                btn.classList.add('active');
+                btn.textContent = '✓ チェック済';
+            }
+            updateCartSummary();
+        }
+
+        // 合計金額・件数の更新
+        function updateCartSummary() {
+            let total = 0;
+            let count = 0;
+
+            mangaData.forEach(pub => {
+                pub.items.forEach(item => {
+                    if (selectedItems.has(item.title)) {
+                        total += item.price;
+                        count++;
+                    }
+                });
+            });
+
+            document.getElementById('cart-count').textContent = count;
+            document.getElementById('cart-total').textContent = `￥${total.toLocaleString()}`;
+        }
+
+        // クリップボードへコピー
+        function copyCartList() {
+            if (selectedItems.size === 0) {
+                alert('買う予定の作品がチェックされていません。');
+                return;
+            }
+
+            let text = "【2026/10/22 買出しマンガメモ】\n";
+            mangaData.forEach(pub => {
+                pub.items.forEach(item => {
+                    if (selectedItems.has(item.title)) {
+                        text += `・${item.title} (${item.author}) - ￥${item.price}\n`;
+                    }
+                });
+            });
+            text += `\n合計: ${document.getElementById('cart-total').textContent}`;
+
+            navigator.clipboard.writeText(text).then(() => {
+                alert('買出しメモをクリップボードにコピーしました！');
+            }).catch(() => {
+                alert('コピーに失敗しました。');
+            });
+        }
+    </script>
+</body>
+</html>
